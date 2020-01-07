@@ -1,0 +1,49 @@
+﻿<Window x:Class="AthosWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AthosWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Loaded="Window_Loaded" Height="550" Width="800"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+   
+    <Grid>
+
+        <StackPanel>
+            <Menu IsMainMenu="True">
+                <MenuItem x:Name="Listar" Header="_Listar" Click="Listar_Click" >
+                    <MenuItem x:Name="Usuarios" Header="Usuários" Click="Usuarios_Click" />
+                    <MenuItem x:Name="Administradoras" Header="Administradoras" Click="Administradoras_Click" />
+                    <MenuItem x:Name="Condominios" Header="Condominios" Click="Condominios_Click" />
+                    <MenuItem x:Name="Emails" Header="Emails" Click="Emails_Click" />
+                </MenuItem>
+                <MenuItem x:Name="Enviar" Header="Enviar e-mail" Click="Enviar_Click" />
+            </Menu>
+            <DataGrid Name="dtGrid" ColumnWidth="*" Visibility="Hidden" CanUserAddRows="false"></DataGrid>
+            <StackPanel x:Name="EnviarForm" Visibility="Hidden">
+                <Label Margin="30,0,0,0">Remetente</Label>
+                <ComboBox x:Name="cmbRemetente" Margin="30,0,30,10"/>
+                <Label Margin="30,0,0,0">Destinatário</Label>
+                <ComboBox x:Name="cmbDestinatario" Margin="30,0,30,10"/>
+                <Label Margin="30,0,0,0">Assunto</Label>
+                <TextBox x:Name="txtAssunto" Margin="30,30,30,30"></TextBox>
+                <Label Margin="30,0,0,0">Conteúdo</Label>
+                <TextBox x:Name="txtConteudo" AcceptsReturn="True" Height="90" Margin="30,30,30,30"></TextBox>
+                <Button x:Name="btnEnviar" Content="Enviar"  Margin="30,0,30,30" Click="btnEnviar_Click"></Button>
+
+
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+
+</Window>
